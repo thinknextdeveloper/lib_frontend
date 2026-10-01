@@ -20,23 +20,9 @@ export default function DashboardHome() {
       <section className="hero">
         <p className="hero-eyebrow">{greeting()}</p>
         <h2>Welcome back, {user?.userName}</h2>
-        <p className="hero-sub">{user?.collegeName ?? "-"}</p>
       </section>
 
-      <section className="stat-grid">
-        <div className="stat">
-          <span className="stat-label">College</span>
-          <span className="stat-value">{user?.collegeName ?? "-"}</span>
-        </div>
-        <div className="stat">
-          <span className="stat-label">Application</span>
-          <span className="stat-value">{user?.applicationName ?? "-"}</span>
-        </div>
-        <div className="stat">
-          <span className="stat-label">Login type</span>
-          <span className="stat-value">{user?.loginType ?? "-"}</span>
-        </div>
-      </section>
+  
 
       {/* {toolbar.length > 0 && (
         <section>
