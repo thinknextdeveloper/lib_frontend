@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { logout } from "@/store/slices/authSlice";
 import { fetchMenu, resetMenu } from "@/store/slices/menuSlice";
 import Navbar from "@/components/Navbar";
+import PageLoader from "@/components/PageLoader";
 // import Toolbar from "@/components/Toolbar";
 
 export default function DashboardLayout({
@@ -31,10 +32,9 @@ export default function DashboardLayout({
     }
   }, [hydrated, token, menuStatus, dispatch]);
 
-  if (!hydrated || !token) {
-    return <div className="container muted">Loading...</div>;
-  }
-
+if (!hydrated || !token) {
+  return <PageLoader />;
+}
   const initials = (user?.userName ?? "?").slice(0, 2).toUpperCase();
 
   return (
